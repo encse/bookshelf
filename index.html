@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .gr_grid_container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            background: #552a0a;
+            border: 8px solid rgb(119 63 21);
+            box-shadow:
+                inset 0px 0px 25px -4px #000000,
+                inset 0px -14px 17px -15px #FFFFFF;
+
+
+        }
+
+        .gr_grid_book_container {
+            border-bottom: 8px solid rgb(119 63 21);
+            flex: 1;
+            display: flex;
+            box-shadow: inset 0px -14px 17px -15px #000000;
+        }
+
+        .gr_grid_book_container a {
+            margin: 4px;
+            box-shadow: 2px 2px #e8e8e8, 0px 2px #e8e8e8;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            display: flex;
+        }
+
+        .gr_grid_book_container a>* {
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+    </style>
+
+    <script>
+
+
+        fetch('books.json')
+            .then(response => response.json())
+            .then(booksData => {
+
+                const getDate = (book) => {
+                    for(key of ["Date Read", "Date Added", "Year Published", "Original Publication Year"]) {
+                        if (book[key]) {
+                            return new Date(book[key]);
+                        }
+                    }
+                    return new Date('1970');
+                }
+
+                booksData.sort(function(a, b){
+                    return getDate(b).getTime() - getDate(a).getTime();
+                });
+                
+                let books = '';
+                for(let book of booksData){
+                    books += `
+                        <div class="gr_grid_book_container">
+                        <a href="" title="${book['Title']}">
+                            <img src="${book['cover']}" loading="lazy"/>
+                        </a>
+                    </div>`;
+                }
+                document.body.innerHTML = '<div class="gr_grid_container">'+books+'</div>';
+            });
+    </script>
+</head>
+<body>
+</body>
+</html>
