@@ -1,10 +1,12 @@
-import { html, css, LitElement } from 'lit';
+import { html, css, LitElement, unsafeCSS } from 'lit';
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import { property } from 'lit/decorators.js';
 import { ActionButton } from './action-button.js';
 import { NewBook } from './new-book.js';
 import { BookViewer } from './book-viewer.js';
 import { Book } from './book.js';
+import bg from './bg.jpg';
+
 
 export default class Bookshelf extends ScopedElementsMixin(LitElement) {
     static get scopedElements() {
@@ -20,6 +22,7 @@ export default class Bookshelf extends ScopedElementsMixin(LitElement) {
         display: flex;
         flex-wrap: wrap;
         background: #552a0a;
+        background-image: url('${unsafeCSS(bg)}');
         border: 8px solid rgb(119 63 21);
         box-shadow: rgb(0 0 0) 0px 0px 25px -4px inset;
         align-items: flex-end;
