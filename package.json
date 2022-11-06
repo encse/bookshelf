@@ -1,0 +1,60 @@
+{
+  "name": "bookself",
+  "version": "1.0.0",
+  "description": "I tracked my book collection on GoodReads until they decided to deprecate their APIs. Since I have a nice  bookshelf on my [personal homepage](https://csokavar.hu/konyvespolc/) showcasing the books I got in touch with,  I needed a way to programmatically process them.",
+  "scripts": {
+    "start": "npx nodemon server.js",
+    "build": "rollup -c rollup.config.js",
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@open-wc/scoped-elements": "^2.1.3",
+    "lit": "^2.0.2",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^2.0.2",
+    "@open-wc/eslint-config": "^8.0.2",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@web/dev-server": "^0.1.34",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "deepmerge": "^4.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "express": "^4.18.2",
+    "prettier": "^2.4.1",
+    "rollup": "^2.79.1",
+    "typescript": "^4.5.2"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  }
+}
