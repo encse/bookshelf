@@ -126,6 +126,7 @@ export class BookDetails extends ScopedElementsMixin(LitElement) {
             publisher: (this as any).shadowRoot.getElementById('publisher').value,
             yearPublished: (this as any).shadowRoot.getElementById('yearPublished').value,
             review: (this as any).shadowRoot.getElementById('review').value,
+            heightCm: (this as any).shadowRoot.getElementById('heightCm').value,
         }
     }
 
@@ -198,6 +199,7 @@ export class BookDetails extends ScopedElementsMixin(LitElement) {
                     <div class="additionalAuthors"><input id="additionalAuthors" placeholder="authors"  value=${this.book.additionalAuthors} /></div>
                     <div class="publisher"><input id="publisher" placeholder="publisher"  value=${this.book.publisher} /></div>
                     <div class="yearPublished"><input id="yearPublished" placeholder="year of publish"  value=${this.book.yearPublished} /></div>
+                    <div class="heightCm"><input id="heightCm" placeholder="height (cm)"  value=${this.book.heightCm} /></div>
                 </div>
             </div>
             <div class="review"><textarea placeholder="My review" id="review">${this.book.review}</textarea></div>

@@ -10,6 +10,7 @@ export type Book = {
     review: string;
     title: string;
     cover: string;
+    heightCm:number;
 }
 
 export function emptyBook():Book {
@@ -24,7 +25,8 @@ export function emptyBook():Book {
         review:"",
         dateRead:"",
         dateAdded:"",
-        yearPublished:""
+        yearPublished:"",
+        heightCm:15,
     };
 }
 export type BookHandler = (book:Book) => Promise<boolean>;

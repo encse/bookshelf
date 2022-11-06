@@ -35,23 +35,25 @@ export class BookViewer extends ScopedElementsMixin(LitElement) {
             cursor: pointer;
         }
 
+        div.cover {
+           height: 100px;
+           width: 100px;
+        }
         .cover {
             display:flex;
-            margin: 4px;
+            margin: 0 4px;
             box-shadow: 
                 -0.5px -0.5px #444, 
                 0.5px -0.5px #444, 
-                -0.5px 0.5px #444, 
-                0.5px 0.5px #444, 
+                -0.5px 0px #444, 
 
-                1px 1px #eee, 
-                1.5px 1.5px #444, 
-                2px 2px #eee;
+                0.5px 0px #444, 
+                1px 0px #eee, 
+                1.5px 0px #444, 
+                2px 0px #eee;
             border-top-right-radius: 2px;
             border-bottom-right-radius: 2px;
             background: #eee;
-            width: 100px;
-            min-height: 100px;
             grid-column: 1;
             grid-row: 1;
         }
@@ -72,7 +74,7 @@ export class BookViewer extends ScopedElementsMixin(LitElement) {
         }
 
     `;
-    
+
     render() {
         const setMode = (mode:BookViewerModes) => (e:MouseEvent) => {
              this.mode = mode; 
@@ -101,10 +103,12 @@ export class BookViewer extends ScopedElementsMixin(LitElement) {
             window.document.body.style.overflow="";
         }
 
+        const height = this.book.heightCm * 5.5;
+
         return html`
             <div class="book" title=${this.book.title} @click="${setMode("view")}">
                 ${this.book.cover ? 
-                    html`<img class="cover" src=${this.book.cover} alt=${this.book.title} loading="lazy" />`:
+                    html`<img class="cover" height=${height} src=${this.book.cover} alt=${this.book.title} loading="lazy" />`:
                     html`<div class="cover"></div>`
                 }
                 <div class="buttons">

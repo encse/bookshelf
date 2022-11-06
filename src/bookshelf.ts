@@ -36,6 +36,7 @@ export default class Bookshelf extends ScopedElementsMixin(LitElement) {
     }
     :host > div {
         flex: 1;
+        justify-content: center;
     }
   `;
 
