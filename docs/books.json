@@ -1,5 +1,19 @@
 [
     {
+        "id": "eee83c1b-0b6d-42f5-aa98-5e8f017c33aa",
+        "title": "Égből szőtt kalap",
+        "cover": "cover/eee83c1b-0b6d-42f5-aa98-5e8f017c33aa.thumbnail.jpg",
+        "additionalAuthors": "",
+        "author": "Terry Pratchett",
+        "fullSizeCover": "cover/eee83c1b-0b6d-42f5-aa98-5e8f017c33aa.jpg",
+        "publisher": "Delta Vision Kft.",
+        "review": "Elég sok korongvilág könyvet olvastunk a lányommal közösen. Terry Pratchett egész életében ezeket írta, negyvenkét regényig jutott. Egy korong alakú világ, amit négy elefánt hord a hátán, akik egy csillagteknős hátán utaznak az űrben... \n\nA fantasy irodalom Douglas Adamseként gondolok rá. Később elkanyarodott a Korongtól, inkább a rajta élőkkel foglalkozott, és mindig valami értelmetlen marhaságról írt, ami viszont sokszor a földi valóság kifigurázása. Több minisorozata van boszorkányokról, csendőrökről, varázslókról és így tovább...",
+        "dateRead": "",
+        "dateAdded": "2022-11-12T13:27:41.233Z",
+        "yearPublished": "2016",
+        "heightCm": "20"
+    },
+    {
         "heightCm": "24",
         "id": "eb5615f2-6a89-4ad1-93f7-611d1052a35c",
         "title": "Algoritmusok",
