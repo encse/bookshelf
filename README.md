@@ -15,7 +15,7 @@ I simply run it as:
 
 ```
 > npm install
-> node start
+> npm start
 ```
 
 I do my changes in a browser at http://localhost:8000 then push to GitHub. 
